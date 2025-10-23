@@ -1,0 +1,112 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Back",
+    "next": "Next",
+    "save": "Save",
+    "done": "Done",
+    "skip": "Skip",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry"
+  },
+  "auth": {
+    "welcome": "Welcome",
+    "welcomeMessage": "We're here to support your mental wellbeing",
+    "login": "Login",
+    "register": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "anonymous": "Start anonymously"
+  },
+  "onboarding": {
+    "welcome": "Welcome",
+    "letsGetStarted": "Let's get started",
+    "step": "Step {{current}}/{{total}}",
+    "demographics": "Basic Information",
+    "ageRange": "Age Range",
+    "gender": "Gender",
+    "prefecture": "Prefecture",
+    "language": "Language",
+    "mentalHealthBackground": "Mental Health Background",
+    "previousTherapy": "Have you received mental health support before?",
+    "currentConcerns": "Current Concerns",
+    "selectConcerns": "Select all that apply",
+    "wellBeingScore": "Current wellbeing",
+    "concerns": {
+      "stress": "Stress Management",
+      "anxiety": "Anxiety",
+      "depression": "Depression/Low Mood",
+      "sleep": "Sleep Issues",
+      "work": "Work-related Stress",
+      "relationships": "Relationship Issues",
+      "academic": "Academic Pressure",
+      "loneliness": "Loneliness/Social Isolation",
+      "transitions": "Life Transitions",
+      "grief": "Grief/Loss",
+      "selfEsteem": "Self-esteem",
+      "burnout": "Burnout"
+    }
+  },
+  "chat": {
+    "title": "Chat",
+    "typeMessage": "Type a message...",
+    "send": "Send",
+    "newConversation": "New Conversation",
+    "thinking": "Thinking...",
+    "crisisDetected": "Emergency Support",
+    "crisisMessage": "Your safety is our priority. If you need immediate help, please contact:"
+  },
+  "mood": {
+    "title": "Mood Tracking",
+    "checkIn": "Daily Check-in",
+    "overallMood": "Overall Mood",
+    "anxiety": "Anxiety Level",
+    "energy": "Energy Level",
+    "sleep": "Sleep Quality",
+    "stress": "Stress Level",
+    "notes": "Notes (optional)",
+    "submit": "Save",
+    "history": "History",
+    "analytics": "Analytics",
+    "trend": "Trend",
+    "average": "Average",
+    "scale": {
+      "veryPoor": "Very Poor",
+      "poor": "Poor",
+      "okay": "Okay",
+      "good": "Good",
+      "excellent": "Excellent"
+    }
+  },
+  "exercises": {
+    "title": "Exercises",
+    "library": "Library",
+    "breathing": "Breathing",
+    "meditation": "Meditation",
+    "cbt": "CBT",
+    "mindfulness": "Mindfulness",
+    "start": "Start",
+    "duration": "Duration",
+    "difficulty": "Difficulty"
+  },
+  "profile": {
+    "title": "Profile",
+    "settings": "Settings",
+    "language": "Language",
+    "notifications": "Notifications",
+    "privacy": "Privacy",
+    "support": "Support",
+    "logout": "Logout",
+    "deleteAccount": "Delete Account"
+  },
+  "crisis": {
+    "hotlines": "Hotlines",
+    "emergency": "Emergency Contacts",
+    "safetyPlan": "Safety Plan"
+  }
+}

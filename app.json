@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "AIセラピー",
+    "slug": "ai-therapy",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "jsEngine": "jsc",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#E8F4F8"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.aitherapy.app",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Use Face ID for secure access",
+        "NSMicrophoneUsageDescription": "Record voice messages"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#E8F4F8"
+      },
+      "package": "com.aitherapy.app",
+      "permissions": [
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT"
+      ]
+    },
+    "web": {
+      "favicon": "./src/assets/images/favicon 4.png"
+    },
+    "plugins": [
+      "expo-local-authentication",
+      "expo-secure-store"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    }
+  }
+}

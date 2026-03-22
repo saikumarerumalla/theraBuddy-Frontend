@@ -1,6 +1,6 @@
 import { apiClient } from './client';
 import { User, OnboardingData } from '../types/user.types';
-import { secureStorage, STORAGE_KEYS } from '@utils/storage';
+import { secureStorage, STORAGE_KEYS } from '@/utils/storage';
 
 export const authApi = {
   register: async (

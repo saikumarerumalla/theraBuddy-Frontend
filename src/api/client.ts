@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosError } from 'axios';
-import config from '@constants/config';
-import { secureStorage, STORAGE_KEYS } from '@utils/storage';
+import config from '@/constants/config';
+import { secureStorage, STORAGE_KEYS } from '@/utils/storage';
 
 class ApiClient {
   private client: AxiosInstance;

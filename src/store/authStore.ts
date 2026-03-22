@@ -1,7 +1,7 @@
 import { createWithEqualityFn } from 'zustand/traditional';
 import { User, UserProfile } from '../types/user.types';
-import { authApi } from '@api/auth';
-import { userApi } from '@api/user';
+import { authApi } from '@/api/auth';
+import { userApi } from '@/api/user';
 
 interface AuthState {
   user: User | null;
@@ -42,7 +42,7 @@ export const useAuthStore = createWithEqualityFn<AuthState>((set) => ({
     set({ isLoading: true, error: null });
     try {
       await authApi.register(email, password, {
-        languagePreference: 'ja',
+        languagePreference: 'en',
         conversationStyle: 'balanced',
         aiCompanionStyle: 'supportive',
         checkinFrequency: 'daily',

@@ -1,6 +1,6 @@
 import { createWithEqualityFn } from 'zustand/traditional';
 import { MoodEntry, MoodAnalytics } from '../types/mood.types';
-import { moodApi } from '@api/mood';
+import { moodApi } from '@/api/mood';
 
 interface MoodState {
   moodHistory: MoodEntry[];

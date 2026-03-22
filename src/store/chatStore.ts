@@ -1,6 +1,6 @@
 import { createWithEqualityFn } from 'zustand/traditional';
 import { Message, Conversation } from '../types/chat.types';
-import { chatApi } from '@api/chat';
+import { chatApi } from '@/api/chat';
 
 interface ChatState {
   conversations: Conversation[];

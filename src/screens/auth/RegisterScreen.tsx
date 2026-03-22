@@ -27,25 +27,25 @@ export const RegisterScreen: React.FC = ({ navigation }: any) => {
     const newErrors: any = {};
 
     if (!name) {
-      newErrors.name = '名前を入力してください';
+      newErrors.name = 'Please enter your name';
     }
 
     if (!email) {
-      newErrors.email = 'メールアドレスを入力してください';
+      newErrors.email = 'Please enter your email address';
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = '有効なメールアドレスを入力してください';
+      newErrors.email = 'Please enter a valid email address';
     }
 
     if (!password) {
-      newErrors.password = 'パスワードを入力してください';
+      newErrors.password = 'Please enter a password';
     } else if (password.length < 8) {
-      newErrors.password = 'パスワードは8文字以上である必要があります';
+      newErrors.password = 'Password must be at least 8 characters';
     }
 
     if (!confirmPassword) {
-      newErrors.confirmPassword = 'パスワードを再入力してください';
+      newErrors.confirmPassword = 'Please confirm your password';
     } else if (password !== confirmPassword) {
-      newErrors.confirmPassword = 'パスワードが一致しません';
+      newErrors.confirmPassword = 'Passwords do not match';
     }
 
     setErrors(newErrors);
@@ -60,7 +60,7 @@ export const RegisterScreen: React.FC = ({ navigation }: any) => {
       await register(email, password, name);
       navigation.navigate('Onboarding');
     } catch (error: any) {
-      Alert.alert('登録エラー', error.message || '登録に失敗しました');
+      Alert.alert('Registration Error', error.message || 'Registration failed');
     } finally {
       setLoading(false);
     }
@@ -71,13 +71,13 @@ export const RegisterScreen: React.FC = ({ navigation }: any) => {
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.header}>
           <Text style={styles.title}>{t('auth.register')}</Text>
-          <Text style={styles.subtitle}>アカウントを作成する</Text>
+          <Text style={styles.subtitle}>Create an account</Text>
         </View>
 
         <View style={styles.form}>
           <Input
-            label="お名前"
-            placeholder="山田太郎"
+            label="Name"
+            placeholder="John Doe"
             value={name}
             onChangeText={setName}
             error={errors.name}
@@ -105,7 +105,7 @@ export const RegisterScreen: React.FC = ({ navigation }: any) => {
           />
 
           <Input
-            label="パスワード（確認）"
+            label="Confirm Password"
             placeholder="••••••••"
             value={confirmPassword}
             onChangeText={setConfirmPassword}

@@ -42,7 +42,7 @@ export const validators = {
   },
 
   phoneNumber: (phone: string): boolean => {
-    // Japanese phone number format
+    // Phone number format
     const phoneRegex = /^0\d{9,10}$/;
     return phoneRegex.test(phone.replace(/[-\s]/g, ''));
   },

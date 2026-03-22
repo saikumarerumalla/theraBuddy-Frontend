@@ -7,11 +7,11 @@ export const ResourcesScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
-        <Text style={styles.title}>リソース</Text>
-        <Text style={styles.subtitle}>役立つ情報と教材</Text>
+        <Text style={styles.title}>Resources</Text>
+        <Text style={styles.subtitle}>Helpful information and materials</Text>
         <View style={styles.placeholder}>
           <Text style={styles.placeholderText}>
-            メンタルヘルスに関する記事、ビデオ、ガイドなどのリソースがここに表示されます。
+            Articles, videos, guides and other mental health resources will be displayed here.
           </Text>
         </View>
       </ScrollView>

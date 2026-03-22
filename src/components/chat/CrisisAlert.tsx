@@ -12,19 +12,19 @@ interface CrisisAlertProps {
 
 const CRISIS_HOTLINES = [
   {
-    name: 'いのちの電話',
-    phone: '0570-783-556',
-    hours: '24時間',
+    name: '988 Suicide & Crisis Lifeline',
+    phone: '988',
+    hours: '24/7',
   },
   {
-    name: 'こころの健康相談統一ダイヤル',
-    phone: '0570-064-556',
-    hours: '都道府県により異なる',
+    name: 'Crisis Text Line',
+    phone: 'Text HOME to 741741',
+    hours: '24/7',
   },
   {
-    name: '緊急時',
-    phone: '110/119',
-    hours: '24時間',
+    name: 'Emergency',
+    phone: '911',
+    hours: '24/7',
   },
 ];
 
@@ -34,7 +34,7 @@ export const CrisisAlert: React.FC<CrisisAlertProps> = ({ onDismiss }) => {
   const handleCall = (phone: string) => {
     const phoneUrl = `tel:${phone.replace(/[-/]/g, '')}`;
     Linking.openURL(phoneUrl).catch((err) =>
-      console.error('電話をかけることができませんでした:', err)
+      console.error('Failed to make phone call:', err)
     );
   };
 
@@ -73,7 +73,7 @@ export const CrisisAlert: React.FC<CrisisAlertProps> = ({ onDismiss }) => {
 
       <View style={styles.footer}>
         <Text style={styles.footerText}>
-          あなたの命は大切です。一人で抱え込まず、助けを求めてください。
+          Your life matters. Don't struggle alone — please reach out for help.
         </Text>
       </View>
     </View>

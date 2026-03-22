@@ -23,17 +23,17 @@ export const AuthNavigator = () => {
       <Stack.Screen
         name="Login"
         component={LoginScreen}
-        options={{ title: 'ログイン' }}
+        options={{ title: 'Login' }}
       />
       <Stack.Screen
         name="Register"
         component={RegisterScreen}
-        options={{ title: '新規登録' }}
+        options={{ title: 'Sign Up' }}
       />
       <Stack.Screen
         name="Onboarding"
         component={OnboardingScreen}
-        options={{ title: '初期設定' }}
+        options={{ title: 'Setup' }}
       />
     </Stack.Navigator>
   );

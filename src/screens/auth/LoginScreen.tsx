@@ -20,15 +20,15 @@ export const LoginScreen: React.FC = ({ navigation }: any) => {
     const newErrors: { email?: string; password?: string } = {};
 
     if (!email) {
-      newErrors.email = 'メールアドレスを入力してください';
+      newErrors.email = 'Please enter your email address';
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = '有効なメールアドレスを入力してください';
+      newErrors.email = 'Please enter a valid email address';
     }
 
     if (!password) {
-      newErrors.password = 'パスワードを入力してください';
+      newErrors.password = 'Please enter your password';
     } else if (password.length < 8) {
-      newErrors.password = 'パスワードは8文字以上である必要があります';
+      newErrors.password = 'Password must be at least 8 characters';
     }
 
     setErrors(newErrors);
@@ -43,7 +43,7 @@ export const LoginScreen: React.FC = ({ navigation }: any) => {
       await login(email, password);
       // Navigation handled by auth state change
     } catch (error: any) {
-      Alert.alert('ログインエラー', error.message || 'ログインに失敗しました');
+      Alert.alert('Login Error', error.message || 'Login failed');
     } finally {
       setLoading(false);
     }
@@ -54,7 +54,7 @@ export const LoginScreen: React.FC = ({ navigation }: any) => {
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.header}>
           <Text style={styles.title}>{t('auth.login')}</Text>
-          <Text style={styles.subtitle}>おかえりなさい</Text>
+          <Text style={styles.subtitle}>Welcome back</Text>
         </View>
 
         <View style={styles.form}>

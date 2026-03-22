@@ -40,15 +40,15 @@ export class ErrorBoundary extends Component<Props, State> {
       return (
         <View style={styles.container}>
           <Text style={styles.emoji}>😔</Text>
-          <Text style={styles.title}>申し訳ございません</Text>
+          <Text style={styles.title}>We're Sorry</Text>
           <Text style={styles.message}>
-            エラーが発生しました。もう一度お試しください。
+            An error occurred. Please try again.
           </Text>
           {this.state.error && (
             <Text style={styles.errorText}>{this.state.error.message}</Text>
           )}
           <TouchableOpacity style={styles.button} onPress={this.handleReset}>
-            <Text style={styles.buttonText}>再試行</Text>
+            <Text style={styles.buttonText}>Retry</Text>
           </TouchableOpacity>
         </View>
       );

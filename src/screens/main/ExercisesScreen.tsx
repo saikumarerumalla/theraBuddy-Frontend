@@ -8,12 +8,10 @@ import { borderRadius } from '../../constants/spacing';
 interface Exercise {
   id: string;
   name: string;
-  nameJa: string;
   category: string;
   duration: number;
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   description: string;
-  descriptionJa: string;
   icon: keyof typeof Ionicons.glyphMap;
 }
 
@@ -21,45 +19,37 @@ const exercises: Exercise[] = [
   {
     id: 'breathing_box',
     name: 'Box Breathing',
-    nameJa: 'ボックス呼吸法',
     category: 'breathing',
     duration: 5,
     difficulty: 'beginner',
     description: '4-4-4-4 breathing pattern for relaxation',
-    descriptionJa: 'リラックスのための4-4-4-4呼吸パターン',
     icon: 'fitness-outline',
   },
   {
     id: 'body_scan',
     name: 'Body Scan Meditation',
-    nameJa: 'ボディスキャン瞑想',
     category: 'meditation',
     duration: 15,
     difficulty: 'beginner',
     description: 'Progressive body awareness meditation',
-    descriptionJa: '段階的な身体意識の瞑想',
     icon: 'body-outline',
   },
   {
     id: 'thought_record',
     name: 'Thought Record',
-    nameJa: '思考記録',
     category: 'cbt',
     duration: 10,
     difficulty: 'intermediate',
     description: 'Identify and challenge negative thoughts',
-    descriptionJa: 'ネガティブな思考を特定し、挑戦する',
     icon: 'book-outline',
   },
   {
     id: 'mindful_walking',
     name: 'Mindful Walking',
-    nameJa: 'マインドフル歩行',
     category: 'mindfulness',
     duration: 20,
     difficulty: 'beginner',
     description: 'Walking meditation practice',
-    descriptionJa: '歩行瞑想の実践',
     icon: 'walk-outline',
   },
 ];
@@ -69,10 +59,10 @@ export const ExercisesScreen: React.FC = ({ navigation }: any) => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const categories = [
-    { id: 'breathing', label: '呼吸法', icon: 'fitness-outline' },
-    { id: 'meditation', label: '瞑想', icon: 'leaf-outline' },
+    { id: 'breathing', label: 'Breathing', icon: 'fitness-outline' },
+    { id: 'meditation', label: 'Meditation', icon: 'leaf-outline' },
     { id: 'cbt', label: 'CBT', icon: 'bulb-outline' },
-    { id: 'mindfulness', label: 'マインドフルネス', icon: 'eye-outline' },
+    { id: 'mindfulness', label: 'Mindfulness', icon: 'eye-outline' },
   ];
 
   const filteredExercises = selectedCategory
@@ -95,11 +85,11 @@ export const ExercisesScreen: React.FC = ({ navigation }: any) => {
   const getDifficultyLabel = (difficulty: string) => {
     switch (difficulty) {
       case 'beginner':
-        return '初級';
+        return 'Beginner';
       case 'intermediate':
-        return '中級';
+        return 'Intermediate';
       case 'advanced':
-        return '上級';
+        return 'Advanced';
       default:
         return difficulty;
     }
@@ -110,7 +100,7 @@ export const ExercisesScreen: React.FC = ({ navigation }: any) => {
       <ScrollView contentContainerStyle={styles.content}>
         {/* Category Filter */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>カテゴリー</Text>
+          <Text style={styles.sectionTitle}>Categories</Text>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -129,7 +119,7 @@ export const ExercisesScreen: React.FC = ({ navigation }: any) => {
                   !selectedCategory && styles.categoryTextActive,
                 ]}
               >
-                すべて
+                All
               </Text>
             </TouchableOpacity>
 
@@ -166,7 +156,7 @@ export const ExercisesScreen: React.FC = ({ navigation }: any) => {
 
         {/* Exercise List */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>エクササイズ</Text>
+          <Text style={styles.sectionTitle}>Exercises</Text>
 
           {filteredExercises.map((exercise) => (
             <TouchableOpacity
@@ -185,9 +175,9 @@ export const ExercisesScreen: React.FC = ({ navigation }: any) => {
               </View>
 
               <View style={styles.exerciseContent}>
-                <Text style={styles.exerciseName}>{exercise.nameJa}</Text>
+                <Text style={styles.exerciseName}>{exercise.name}</Text>
                 <Text style={styles.exerciseDescription}>
-                  {exercise.descriptionJa}
+                  {exercise.description}
                 </Text>
 
                 <View style={styles.exerciseMeta}>
@@ -197,7 +187,7 @@ export const ExercisesScreen: React.FC = ({ navigation }: any) => {
                       size={14}
                       color={colors.text.secondary}
                     />
-                    <Text style={styles.metaText}>{exercise.duration}分</Text>
+                    <Text style={styles.metaText}>{exercise.duration} min</Text>
                   </View>
 
                   <View

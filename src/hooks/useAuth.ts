@@ -81,9 +81,9 @@ export const useAuth = () => {
 
     try {
       const result = await LocalAuthentication.authenticateAsync({
-        promptMessage: 'ログインするために認証してください',
-        fallbackLabel: 'パスワードを使用',
-        cancelLabel: 'キャンセル',
+        promptMessage: 'Authenticate to log in',
+        fallbackLabel: 'Use password',
+        cancelLabel: 'Cancel',
       });
       return result.success;
     } catch (error) {

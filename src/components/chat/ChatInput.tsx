@@ -13,7 +13,7 @@ interface ChatInputProps {
 export const ChatInput: React.FC<ChatInputProps> = ({
   onSend,
   disabled = false,
-  placeholder = 'メッセージを入力...',
+  placeholder = 'Type a message...',
 }) => {
   const [message, setMessage] = useState('');
 

@@ -9,23 +9,23 @@ export const PHQ9Screen: React.FC = ({ navigation }: any) => {
   const [responses, setResponses] = useState<number[]>([]);
 
   const questions = [
-    '物事に対してほとんど興味がない、または楽しめない',
-    '気分が落ち込む、憂うつになる、または絶望的な気持ちになる',
-    '寝つきが悪い、途中で目が覚める、または眠りすぎる',
-    '疲れた感じがする、または気力がない',
-    'あまり食欲がない、または食べ過ぎる',
-    '自分はダメな人間だ、人生の落伍者だと気に病む、または自分自身あるいは家族に申し訳がないと感じる',
-    '新聞を読む、またはテレビを見ることなどに集中することが難しい',
-    '他人が気づくぐらいに動きや話し方が遅くなる。あるいはこの反対に、そわそわしたり、落ち着かず、普段よりも動き回ることがある',
-    '死んだ方がましだ、あるいは自分を何らかの方法で傷つけようと思ったことがある',
+    'Little interest or pleasure in doing things',
+    'Feeling down, depressed, or hopeless',
+    'Trouble falling or staying asleep, or sleeping too much',
+    'Feeling tired or having little energy',
+    'Poor appetite or overeating',
+    'Feeling bad about yourself — or that you are a failure or have let yourself or your family down',
+    'Trouble concentrating on things, such as reading the newspaper or watching television',
+    'Moving or speaking so slowly that other people could have noticed. Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual',
+    'Thoughts that you would be better off dead, or of hurting yourself in some way',
   ];
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
-        <Text style={styles.title}>PHQ-9 うつ病評価スケール</Text>
+        <Text style={styles.title}>PHQ-9 Depression Assessment</Text>
         <Text style={styles.description}>
-          過去2週間で、以下の問題にどのくらい悩まされましたか？
+          Over the last 2 weeks, how often have you been bothered by the following problems?
         </Text>
 
         <View style={styles.questionsContainer}>
@@ -35,14 +35,14 @@ export const PHQ9Screen: React.FC = ({ navigation }: any) => {
                 {index + 1}. {question}
               </Text>
               <View style={styles.placeholder}>
-                <Text style={styles.placeholderText}>回答オプションがここに表示されます</Text>
+                <Text style={styles.placeholderText}>Response options will be displayed here</Text>
               </View>
             </View>
           ))}
         </View>
 
         <Button
-          title="提出"
+          title="Submit"
           onPress={() => navigation.goBack()}
           variant="primary"
           size="large"

@@ -27,7 +27,7 @@ export const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
 
       {message.crisisDetected && (
         <View style={styles.crisisIndicator}>
-          <Text style={styles.crisisText}>⚠️ 緊急サポートが利用可能です</Text>
+          <Text style={styles.crisisText}>⚠️ Emergency support is available</Text>
         </View>
       )}
     </View>

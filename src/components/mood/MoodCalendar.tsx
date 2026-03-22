@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { colors, spacing, typography} from '@constants/index';
 import { MoodEntry } from '@/types/mood.types';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, isSameDay, isSameMonth } from 'date-fns';
-import { ja } from 'date-fns/locale';
+
 import { borderRadius } from '@/constants/spacing';
 
 interface MoodCalendarProps {
@@ -34,12 +34,12 @@ export const MoodCalendar: React.FC<MoodCalendarProps> = ({
     return colors.mood.excellent;
   };
 
-  const weekDays = ['日', '月', '火', '水', '木', '金', '土'];
+  const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        {format(currentDate, 'yyyy年 M月', { locale: ja })}
+        {format(currentDate, 'MMMM yyyy')}
       </Text>
 
       <View style={styles.weekDaysContainer}>
@@ -86,14 +86,14 @@ export const MoodCalendar: React.FC<MoodCalendarProps> = ({
       </View>
 
       <View style={styles.legend}>
-        <Text style={styles.legendTitle}>気分スケール:</Text>
+        <Text style={styles.legendTitle}>Mood Scale:</Text>
         <View style={styles.legendItems}>
           {[
-            { label: '最悪', color: colors.mood.veryPoor },
-            { label: '悪い', color: colors.mood.poor },
-            { label: '普通', color: colors.mood.okay },
-            { label: '良い', color: colors.mood.good },
-            { label: '最高', color: colors.mood.excellent },
+            { label: 'Very Poor', color: colors.mood.veryPoor },
+            { label: 'Poor', color: colors.mood.poor },
+            { label: 'Okay', color: colors.mood.okay },
+            { label: 'Good', color: colors.mood.good },
+            { label: 'Excellent', color: colors.mood.excellent },
           ].map((item, index) => (
             <View key={index} style={styles.legendItem}>
               <View style={[styles.legendColor, { backgroundColor: item.color }]} />

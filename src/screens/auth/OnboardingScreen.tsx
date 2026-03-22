@@ -44,7 +44,7 @@ export const OnboardingScreen: React.FC = ({ navigation }: any) => {
       });
       // Navigation will be handled by auth state change
     } catch (error: any) {
-      Alert.alert('エラー', '設定の保存に失敗しました');
+      Alert.alert('Error', 'Failed to save settings');
     }
   };
 
@@ -58,35 +58,35 @@ export const OnboardingScreen: React.FC = ({ navigation }: any) => {
       case 1:
         return (
           <OnboardingStep
-            title="ようこそ"
-            description="あなたの心のサポートを始めましょう。いくつか質問させてください。"
+            title="Welcome"
+            description="Let's begin your mental wellness journey. We'd like to ask you a few questions."
           >
             <View style={styles.stepContent}>
               <Text style={styles.infoText}>
-                このアプリは、あなたの心の健康をサポートするためのツールです。
-                以下の質問に答えることで、より適切なサポートを提供できます。
+                This app is a tool to support your mental health.
+                By answering the following questions, we can provide more personalized support.
               </Text>
               <Text style={styles.infoText}>
-                すべての情報は安全に保管され、あなたのプライバシーは完全に保護されます。
+                All information is securely stored and your privacy is fully protected.
               </Text>
             </View>
           </OnboardingStep>
         );
       case 2:
         return (
-          <OnboardingStep title="安全確認">
+          <OnboardingStep title="Safety Check">
             <CrisisAssessment onComplete={handleCrisisComplete} />
           </OnboardingStep>
         );
       case 3:
         return (
           <OnboardingStep
-            title="基本情報"
-            description="あなたについて教えてください"
+            title="Basic Information"
+            description="Tell us about yourself"
           >
             <View style={styles.stepContent}>
               <Text style={styles.placeholder}>
-                ここに年齢層、性別などの選択肢を表示
+                Age range, gender, and other options will be displayed here
               </Text>
             </View>
           </OnboardingStep>
@@ -94,12 +94,12 @@ export const OnboardingScreen: React.FC = ({ navigation }: any) => {
       case 4:
         return (
           <OnboardingStep
-            title="現在の悩み"
-            description="当てはまるものを選択してください"
+            title="Current Concerns"
+            description="Select all that apply"
           >
             <View style={styles.stepContent}>
               <Text style={styles.placeholder}>
-                ここに悩みの選択肢を表示（ストレス、不安、うつなど）
+                Concern options will be displayed here (stress, anxiety, depression, etc.)
               </Text>
             </View>
           </OnboardingStep>
@@ -107,12 +107,12 @@ export const OnboardingScreen: React.FC = ({ navigation }: any) => {
       case 5:
         return (
           <OnboardingStep
-            title="準備完了"
-            description="設定が完了しました"
+            title="All Set!"
+            description="Setup is complete"
           >
             <View style={styles.stepContent}>
               <Text style={styles.infoText}>
-                すべての設定が完了しました。今すぐサポートを開始できます。
+                All settings are complete. You can start receiving support right away.
               </Text>
             </View>
           </OnboardingStep>

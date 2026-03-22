@@ -23,8 +23,8 @@ export const MoodSlider: React.FC<MoodSliderProps> = ({
   maximumValue = 10,
   step = 1,
   showLabels = true,
-  minLabel = 'とても悪い',
-  maxLabel = 'とても良い',
+  minLabel = 'Very Poor',
+  maxLabel = 'Very Good',
 }) => {
   const getMoodColor = (val: number) => {
     if (val <= 2) return colors.mood.veryPoor;

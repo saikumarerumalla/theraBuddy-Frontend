@@ -46,7 +46,7 @@ export const TypingIndicator: React.FC = () => {
             style={[styles.dot, { transform: [{ translateY: dot3 }] }]}
           />
         </View>
-        <Text style={styles.text}>考え中...</Text>
+        <Text style={styles.text}>Thinking...</Text>
       </View>
     </View>
   );

@@ -10,25 +10,25 @@ export const SettingsScreen: React.FC = () => {
     {
       id: 'account',
       icon: 'person-outline',
-      title: 'アカウント設定',
+      title: 'Account Settings',
       onPress: () => console.log('Account settings'),
     },
     {
       id: 'notifications',
       icon: 'notifications-outline',
-      title: '通知',
+      title: 'Notifications',
       onPress: () => console.log('Notifications'),
     },
     {
       id: 'privacy',
       icon: 'lock-closed-outline',
-      title: 'プライバシーとセキュリティ',
+      title: 'Privacy & Security',
       onPress: () => console.log('Privacy'),
     },
     {
       id: 'language',
       icon: 'language-outline',
-      title: '言語',
+      title: 'Language',
       onPress: () => console.log('Language'),
     },
   ];
@@ -36,7 +36,7 @@ export const SettingsScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
-        <Text style={styles.title}>設定</Text>
+        <Text style={styles.title}>Settings</Text>
 
         <View style={styles.section}>
           {settingsItems.map((item) => (

@@ -8,14 +8,14 @@ import { useAuthStore } from '@/store/authStore';
 import { borderRadius } from '../../constants/spacing';
 
 export const ProfileScreen: React.FC = ({ navigation }: any) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { user, logout } = useAuthStore();
 
   const handleLogout = () => {
-    Alert.alert('ログアウト', 'ログアウトしますか？', [
-      { text: 'キャンセル', style: 'cancel' },
+    Alert.alert('Logout', 'Are you sure you want to logout?', [
+      { text: 'Cancel', style: 'cancel' },
       {
-        text: 'ログアウト',
+        text: 'Logout',
         style: 'destructive',
         onPress: async () => {
           await logout();
@@ -26,43 +26,33 @@ export const ProfileScreen: React.FC = ({ navigation }: any) => {
 
   const menuItems = [
     {
-      id: 'language',
-      icon: 'language-outline',
-      title: '言語',
-      value: i18n.language === 'ja' ? '日本語' : 'English',
-      onPress: () => {
-        const newLang = i18n.language === 'ja' ? 'en' : 'ja';
-        i18n.changeLanguage(newLang);
-      },
-    },
-    {
       id: 'notifications',
       icon: 'notifications-outline',
-      title: '通知設定',
+      title: 'Notifications',
       onPress: () => console.log('Notifications'),
     },
     {
       id: 'privacy',
       icon: 'shield-checkmark-outline',
-      title: 'プライバシー',
+      title: 'Privacy',
       onPress: () => console.log('Privacy'),
     },
     {
       id: 'data',
       icon: 'download-outline',
-      title: 'データをエクスポート',
+      title: 'Export Data',
       onPress: () => console.log('Export data'),
     },
     {
       id: 'help',
       icon: 'help-circle-outline',
-      title: 'ヘルプ＆サポート',
+      title: 'Help & Support',
       onPress: () => console.log('Help'),
     },
     {
       id: 'about',
       icon: 'information-circle-outline',
-      title: 'アプリについて',
+      title: 'About',
       onPress: () => console.log('About'),
     },
   ];
@@ -76,24 +66,24 @@ export const ProfileScreen: React.FC = ({ navigation }: any) => {
             <Ionicons name="person" size={48} color={colors.primary.main} />
           </View>
 
-          <Text style={styles.email}>{user?.email || '匿名ユーザー'}</Text>
+          <Text style={styles.email}>{user?.email || 'Anonymous User'}</Text>
         </View>
 
         {/* Stats */}
         <View style={styles.statsContainer}>
           <View style={styles.statCard}>
             <Text style={styles.statValue}>42</Text>
-            <Text style={styles.statLabel}>記録日数</Text>
+            <Text style={styles.statLabel}>Days Logged</Text>
           </View>
 
           <View style={styles.statCard}>
             <Text style={styles.statValue}>7.5</Text>
-            <Text style={styles.statLabel}>平均気分</Text>
+            <Text style={styles.statLabel}>Avg Mood</Text>
           </View>
 
           <View style={styles.statCard}>
             <Text style={styles.statValue}>15</Text>
-            <Text style={styles.statLabel}>セッション</Text>
+            <Text style={styles.statLabel}>Sessions</Text>
           </View>
         </View>
 
@@ -115,9 +105,6 @@ export const ProfileScreen: React.FC = ({ navigation }: any) => {
               </View>
 
               <View style={styles.menuItemRight}>
-                {item.value && (
-                  <Text style={styles.menuItemValue}>{item.value}</Text>
-                )}
                 <Ionicons
                   name="chevron-forward"
                   size={20}
@@ -131,7 +118,7 @@ export const ProfileScreen: React.FC = ({ navigation }: any) => {
         {/* Logout Button */}
         <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
           <Ionicons name="log-out-outline" size={20} color={colors.error} />
-          <Text style={styles.logoutText}>ログアウト</Text>
+          <Text style={styles.logoutText}>Logout</Text>
         </TouchableOpacity>
 
         {/* Version */}

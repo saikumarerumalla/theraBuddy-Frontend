@@ -9,21 +9,21 @@ export const GAD7Screen: React.FC = ({ navigation }: any) => {
   const [responses, setResponses] = useState<number[]>([]);
 
   const questions = [
-    '緊張感、不安感、または神経過敏を感じる',
-    '心配するのを止められない、またはコントロールできない',
-    'いろいろなことを心配しすぎる',
-    'リラックスすることが難しい',
-    'そわそわと落ち着かなくなる',
-    'いらいらする、または怒りっぽくなる',
-    '何か恐ろしいことが起こるような気がして怖くなる',
+    'Feeling nervous, anxious, or on edge',
+    'Not being able to stop or control worrying',
+    'Worrying too much about different things',
+    'Trouble relaxing',
+    'Being so restless that it is hard to sit still',
+    'Becoming easily annoyed or irritable',
+    'Feeling afraid, as if something awful might happen',
   ];
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
-        <Text style={styles.title}>GAD-7 不安評価スケール</Text>
+        <Text style={styles.title}>GAD-7 Anxiety Assessment</Text>
         <Text style={styles.description}>
-          過去2週間で、以下の問題にどのくらい悩まされましたか？
+          Over the last 2 weeks, how often have you been bothered by the following problems?
         </Text>
 
         <View style={styles.questionsContainer}>
@@ -33,14 +33,14 @@ export const GAD7Screen: React.FC = ({ navigation }: any) => {
                 {index + 1}. {question}
               </Text>
               <View style={styles.placeholder}>
-                <Text style={styles.placeholderText}>回答オプションがここに表示されます</Text>
+                <Text style={styles.placeholderText}>Response options will be displayed here</Text>
               </View>
             </View>
           ))}
         </View>
 
         <Button
-          title="提出"
+          title="Submit"
           onPress={() => navigation.goBack()}
           variant="primary"
           size="large"

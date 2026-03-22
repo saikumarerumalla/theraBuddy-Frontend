@@ -11,21 +11,21 @@ interface CrisisAssessmentProps {
 const CRISIS_QUESTIONS = [
   {
     id: 1,
-    question: '最近、自分を傷つけたいと思ったことがありますか？',
+    question: 'Have you recently thought about hurting yourself?',
   },
   {
     id: 2,
-    question: '死にたいと思ったことがありますか？',
+    question: 'Have you had thoughts of wanting to die?',
   },
   {
     id: 3,
-    question: '自殺について具体的に計画したことがありますか？',
+    question: 'Have you made a specific plan for suicide?',
   },
 ];
 
 const EMERGENCY_CONTACTS = [
-  { name: 'いのちの電話', phone: '0570-783-556' },
-  { name: '緊急時', phone: '110/119' },
+  { name: '988 Suicide & Crisis Lifeline', phone: '988' },
+  { name: 'Emergency', phone: '911' },
 ];
 
 export const CrisisAssessment: React.FC<CrisisAssessmentProps> = ({ onComplete }) => {
@@ -49,7 +49,7 @@ export const CrisisAssessment: React.FC<CrisisAssessmentProps> = ({ onComplete }
     const allAnswered = CRISIS_QUESTIONS.every((q) => answers[q.id] !== undefined);
 
     if (!allAnswered) {
-      Alert.alert('確認', 'すべての質問に回答してください。');
+      Alert.alert('Confirm', 'Please answer all questions.');
       return;
     }
 
@@ -61,10 +61,10 @@ export const CrisisAssessment: React.FC<CrisisAssessmentProps> = ({ onComplete }
     <View style={styles.container}>
       <View style={styles.header}>
         <Ionicons name="shield-checkmark" size={48} color={colors.primary.main} />
-        <Text style={styles.title}>安全確認</Text>
+        <Text style={styles.title}>Safety Check</Text>
         <Text style={styles.description}>
-          あなたの安全を確認するために、いくつか質問させてください。
-          回答は完全に秘密として扱われます。
+          To ensure your safety, we'd like to ask you a few questions.
+          Your answers are kept completely confidential.
         </Text>
       </View>
 
@@ -86,7 +86,7 @@ export const CrisisAssessment: React.FC<CrisisAssessmentProps> = ({ onComplete }
                     answers[q.id] === false && styles.answerButtonTextSelected,
                   ]}
                 >
-                  いいえ
+                  No
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
@@ -103,7 +103,7 @@ export const CrisisAssessment: React.FC<CrisisAssessmentProps> = ({ onComplete }
                     answers[q.id] === true && styles.answerButtonTextSelected,
                   ]}
                 >
-                  はい
+                  Yes
                 </Text>
               </TouchableOpacity>
             </View>
@@ -116,10 +116,10 @@ export const CrisisAssessment: React.FC<CrisisAssessmentProps> = ({ onComplete }
           <Ionicons name="alert-circle" size={24} color={colors.error} />
           <View style={styles.warningContent}>
             <Text style={styles.warningTitle}>
-              あなたの安全が最優先です
+              Your safety is our top priority
             </Text>
             <Text style={styles.warningText}>
-              今すぐ助けが必要な場合は、以下の連絡先をご利用ください：
+              If you need help right now, please use the contacts below:
             </Text>
             {EMERGENCY_CONTACTS.map((contact, index) => (
               <Text key={index} style={styles.contactText}>
@@ -131,7 +131,7 @@ export const CrisisAssessment: React.FC<CrisisAssessmentProps> = ({ onComplete }
       )}
 
       <Button
-        title="続ける"
+        title="Continue"
         onPress={handleContinue}
         variant="primary"
         size="large"

@@ -45,27 +45,27 @@ export const MainNavigator = () => {
       <Tab.Screen
         name="Home"
         component={HomeScreen}
-        options={{ title: 'ホーム' }}
+        options={{ title: 'Home' }}
       />
       <Tab.Screen
         name="Chat"
         component={ChatScreen}
-        options={{ title: 'チャット' }}
+        options={{ title: 'Chat' }}
       />
       <Tab.Screen
         name="Mood"
         component={MoodScreen}
-        options={{ title: '気分記録' }}
+        options={{ title: 'Mood Log' }}
       />
       <Tab.Screen
         name="Exercises"
         component={ExercisesScreen}
-        options={{ title: 'エクササイズ' }}
+        options={{ title: 'Exercises' }}
       />
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
-        options={{ title: 'プロフィール' }}
+        options={{ title: 'Profile' }}
       />
     </Tab.Navigator>
   );

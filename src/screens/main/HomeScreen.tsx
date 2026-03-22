@@ -7,7 +7,7 @@ import { useAuthStore } from '@/store/authStore';
 import { useMoodStore } from '@/store/moodStore';
 import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
-import { ja } from 'date-fns/locale';
+
 import { borderRadius } from '../../constants/spacing';
 
 export const HomeScreen: React.FC = ({ navigation }: any) => {
@@ -21,9 +21,9 @@ export const HomeScreen: React.FC = ({ navigation }: any) => {
 
   const getGreeting = () => {
     const hour = new Date().getHours();
-    if (hour < 12) return 'おはようございます';
-    if (hour < 18) return 'こんにちは';
-    return 'こんばんは';
+    if (hour < 12) return 'Good Morning';
+    if (hour < 18) return 'Good Afternoon';
+    return 'Good Evening';
   };
 
   return (
@@ -34,7 +34,7 @@ export const HomeScreen: React.FC = ({ navigation }: any) => {
           <View>
             <Text style={styles.greeting}>{getGreeting()}</Text>
             <Text style={styles.date}>
-              {format(new Date(), 'M月d日（E）', { locale: ja })}
+              {format(new Date(), 'EEEE, MMMM d')}
             </Text>
           </View>
           <TouchableOpacity
@@ -47,7 +47,7 @@ export const HomeScreen: React.FC = ({ navigation }: any) => {
 
         {/* Quick Actions */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>今日の活動</Text>
+          <Text style={styles.sectionTitle}>Today's Activities</Text>
           <View style={styles.actionsGrid}>
             <TouchableOpacity
               style={styles.actionCard}
@@ -56,8 +56,8 @@ export const HomeScreen: React.FC = ({ navigation }: any) => {
               <View style={[styles.actionIcon, { backgroundColor: colors.primary.light }]}>
                 <Ionicons name="chatbubble-outline" size={24} color={colors.primary.main} />
               </View>
-              <Text style={styles.actionTitle}>チャット</Text>
-              <Text style={styles.actionSubtitle}>AIと話す</Text>
+              <Text style={styles.actionTitle}>Chat</Text>
+              <Text style={styles.actionSubtitle}>Talk with AI</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -67,8 +67,8 @@ export const HomeScreen: React.FC = ({ navigation }: any) => {
               <View style={[styles.actionIcon, { backgroundColor: colors.secondary.light }]}>
                 <Ionicons name="happy-outline" size={24} color={colors.secondary.main} />
               </View>
-              <Text style={styles.actionTitle}>気分記録</Text>
-              <Text style={styles.actionSubtitle}>今の気分を記録</Text>
+              <Text style={styles.actionTitle}>Mood Log</Text>
+              <Text style={styles.actionSubtitle}>Record your mood</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -78,8 +78,8 @@ export const HomeScreen: React.FC = ({ navigation }: any) => {
               <View style={[styles.actionIcon, { backgroundColor: colors.accent.light }]}>
                 <Ionicons name="fitness-outline" size={24} color={colors.accent.main} />
               </View>
-              <Text style={styles.actionTitle}>エクササイズ</Text>
-              <Text style={styles.actionSubtitle}>リラックス</Text>
+              <Text style={styles.actionTitle}>Exercises</Text>
+              <Text style={styles.actionSubtitle}>Relax</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -89,8 +89,8 @@ export const HomeScreen: React.FC = ({ navigation }: any) => {
               <View style={[styles.actionIcon, { backgroundColor: colors.info + '20' }]}>
                 <Ionicons name="book-outline" size={24} color={colors.info} />
               </View>
-              <Text style={styles.actionTitle}>リソース</Text>
-              <Text style={styles.actionSubtitle}>役立つ情報</Text>
+              <Text style={styles.actionTitle}>Resources</Text>
+              <Text style={styles.actionSubtitle}>Helpful info</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -98,11 +98,11 @@ export const HomeScreen: React.FC = ({ navigation }: any) => {
         {/* Mood Summary */}
         {analytics && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>今週の気分</Text>
+            <Text style={styles.sectionTitle}>This Week's Mood</Text>
             <View style={styles.moodCard}>
               <View style={styles.moodStat}>
                 <Text style={styles.moodValue}>{analytics.averageMood?.toFixed(1) || '0'}</Text>
-                <Text style={styles.moodLabel}>平均気分</Text>
+                <Text style={styles.moodLabel}>Avg Mood</Text>
               </View>
               <View style={styles.moodStat}>
                 <Ionicons
@@ -110,7 +110,7 @@ export const HomeScreen: React.FC = ({ navigation }: any) => {
                   size={32}
                   color={colors.success}
                 />
-                <Text style={styles.moodLabel}>安定</Text>
+                <Text style={styles.moodLabel}>Stable</Text>
               </View>
             </View>
           </View>
@@ -119,7 +119,7 @@ export const HomeScreen: React.FC = ({ navigation }: any) => {
         {/* Inspirational Quote */}
         <View style={styles.quoteCard}>
           <Text style={styles.quote}>
-            「一歩ずつ、自分のペースで。あなたは一人じゃない。」
+            "One step at a time, at your own pace. You are not alone."
           </Text>
         </View>
       </ScrollView>

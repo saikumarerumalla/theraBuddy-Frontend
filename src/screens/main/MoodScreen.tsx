@@ -40,7 +40,7 @@ export const MoodScreen: React.FC = () => {
         date: new Date().toISOString(),
       });
 
-      Alert.alert('記録完了', '今日の気分を記録しました');
+      Alert.alert('Entry Saved', 'Your mood has been recorded');
 
       // Reset form
       setOverallMood(5);
@@ -54,7 +54,7 @@ export const MoodScreen: React.FC = () => {
       loadMoodHistory(30);
       loadAnalytics(30);
     } catch (error: any) {
-      Alert.alert('エラー', '記録に失敗しました');
+      Alert.alert('Error', 'Failed to save entry');
     } finally {
       setLoading(false);
     }
@@ -78,37 +78,37 @@ export const MoodScreen: React.FC = () => {
               label={t('mood.anxiety')}
               value={anxietyLevel}
               onValueChange={setAnxietyLevel}
-              minLabel="落ち着いている"
-              maxLabel="とても不安"
+              minLabel="Calm"
+              maxLabel="Very Anxious"
             />
 
             <MoodSlider
               label={t('mood.energy')}
               value={energyLevel}
               onValueChange={setEnergyLevel}
-              minLabel="疲れている"
-              maxLabel="元気"
+              minLabel="Tired"
+              maxLabel="Energetic"
             />
 
             <MoodSlider
               label={t('mood.sleep')}
               value={sleepQuality}
               onValueChange={setSleepQuality}
-              minLabel="とても悪い"
-              maxLabel="とても良い"
+              minLabel="Very Poor"
+              maxLabel="Very Good"
             />
 
             <MoodSlider
               label={t('mood.stress')}
               value={stressLevel}
               onValueChange={setStressLevel}
-              minLabel="リラックス"
-              maxLabel="とても高い"
+              minLabel="Relaxed"
+              maxLabel="Very High"
             />
 
             <Input
               label={t('mood.notes')}
-              placeholder="今日の気分について..."
+              placeholder="How are you feeling today..."
               value={notes}
               onChangeText={setNotes}
               multiline

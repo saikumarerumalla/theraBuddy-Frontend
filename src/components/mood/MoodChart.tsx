@@ -4,7 +4,7 @@ import { VictoryLine, VictoryChart, VictoryAxis, VictoryTheme } from 'victory-na
 import { colors, spacing, typography } from '@/constants';
 import { MoodEntry } from '@/types/mood.types';
 import { format } from 'date-fns';
-import { ja } from 'date-fns/locale';
+
 
 interface MoodChartProps {
   data: MoodEntry[];
@@ -19,14 +19,14 @@ export const MoodChart: React.FC<MoodChartProps> = ({ data }) => {
   if (chartData.length === 0) {
     return (
       <View style={styles.emptyContainer}>
-        <Text style={styles.emptyText}>まだデータがありません</Text>
+        <Text style={styles.emptyText}>No data yet</Text>
       </View>
     );
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>気分の推移</Text>
+      <Text style={styles.title}>Mood Trend</Text>
 
       <VictoryChart
         width={Dimensions.get('window').width - 32}
@@ -35,7 +35,7 @@ export const MoodChart: React.FC<MoodChartProps> = ({ data }) => {
         padding={{ top: 20, bottom: 40, left: 50, right: 20 }}
       >
         <VictoryAxis
-          tickFormat={(date) => format(date, 'M/d', { locale: ja })}
+          tickFormat={(date) => format(date, 'M/d')}
           style={{
             tickLabels: { fontSize: 10, fill: colors.text.secondary },
           }}

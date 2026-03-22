@@ -20,7 +20,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
     <View style={styles.container}>
       {showStepText && (
         <Text style={styles.stepText}>
-          ステップ {currentStep} / {totalSteps}
+          Step {currentStep} / {totalSteps}
         </Text>
       )}
       <View style={styles.progressBarContainer}>

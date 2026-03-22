@@ -1,6 +1,6 @@
-// Japanese-inspired calming color palette
+// Calming color palette
 export const colors = {
-  // Primary - Soft Lavender (安心感)
+  // Primary - Soft Lavender (Calming)
   primary: {
     main: '#9FA8DA',
     light: '#D1D5F0',
@@ -9,14 +9,14 @@ export const colors = {
     100: '#E8EAF6',
   },
 
-  // Secondary - Sage Green (落ち着き)
+  // Secondary - Sage Green (Soothing)
   secondary: {
     main: '#A5D6A7',
     light: '#C8E6C9',
     dark: '#66BB6A',
   },
 
-  // Accent - Soft Coral (温かみ)
+  // Accent - Soft Coral (Warmth)
   accent: {
     main: '#FFAB91',
     light: '#FFCCBC',

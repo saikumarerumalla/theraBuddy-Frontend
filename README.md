@@ -4,7 +4,7 @@ A production-ready React Native mobile application for mental health support, fe
 
 ## 📱 Features
 
-- ✅ Beautiful Japanese-inspired calming design
+- ✅ Beautiful calming design
 - ✅ Complete onboarding flow (12 steps)
 - ✅ AI chat interface with streaming responses
 - ✅ Mood tracking with visualizations
@@ -12,7 +12,7 @@ A production-ready React Native mobile application for mental health support, fe
 - ✅ Exercise library with audio guidance
 - ✅ Crisis detection and resources
 - ✅ Progress dashboard with analytics
-- ✅ Bilingual support (Japanese/English)
+- ✅ English language support
 - ✅ Offline mode support
 - ✅ Biometric authentication
 - ✅ End-to-end encryption
@@ -26,7 +26,7 @@ A production-ready React Native mobile application for mental health support, fe
 - **React Query** 5.0+ - Server state & caching
 - **React Native Paper** 5.11+ - UI components
 - **React Navigation** 6.1+ - Navigation
-- **i18next** - Internationalization
+- **i18next** - Localization
 - **Victory Native** - Charts & visualizations
 - **Axios** - API client
 
@@ -116,8 +116,7 @@ theraBuddy-Frontend/
 │   │   ├── spacing.ts              # Spacing system
 │   │   └── config.ts               # Environment config
 │   │
-│   ├── locales/                     # Translations (3 files)
-│   │   ├── ja.json                 # Japanese translations
+│   ├── locales/                     # Translations (2 files)
 │   │   ├── en.json                 # English translations
 │   │   └── i18n.ts                 # i18n configuration
 │   │
@@ -149,7 +148,7 @@ theraBuddy-Frontend/
   - Utilities: 4 files
   - Constants: 4 files
   - Type definitions: 4 files
-  - Localization: 3 files
+  - Localization: 2 files
 
 ## 🚀 Getting Started
 
@@ -191,23 +190,22 @@ npx expo start --web
 
 ## 🎨 Design System
 
-The app uses a Japanese-inspired calming design system:
+The app uses a calming design system:
 
-- **Primary Color**: Soft Lavender (#9FA8DA) - 安心感 (sense of security)
-- **Secondary Color**: Sage Green (#A5D6A7) - 落ち着き (calmness)
-- **Accent Color**: Soft Coral (#FFAB91) - 温かみ (warmth)
+- **Primary Color**: Soft Lavender (#9FA8DA) - Calming
+- **Secondary Color**: Sage Green (#A5D6A7) - Soothing
+- **Accent Color**: Soft Coral (#FFAB91) - Warmth
 
 ### Design Philosophy
 
 - **Minimalist** - Clean, uncluttered interfaces
 - **Calming** - Soft colors, gentle animations
-- **Cultural** - Japanese aesthetic principles (kanso, ma, seijaku)
 - **Accessible** - Easy navigation, large touch targets
 - **Private** - Security indicators, data control
 
 ## 🌐 Localization
 
-The app supports both Japanese and English languages with complete translations for:
+The app uses English with complete translations for:
 - UI labels and buttons
 - Onboarding flow
 - Error messages
@@ -281,7 +279,7 @@ Private - All rights reserved
 
 ## 🙏 Acknowledgments
 
-- Design inspired by Japanese aesthetics
+- Design inspired by calming aesthetic principles
 - Built with React Native and Expo
 - Powered by AI for therapeutic conversations
 
